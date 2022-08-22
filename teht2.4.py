@@ -9,6 +9,11 @@ tulo = luku_1 * luku_2 * luku_3
 ka = summa / 3
 
 # tulostus
+print("\nLukujen summa on")
 print(summa)
+
+print("Lukujen tulo on")
 print(tulo)
+
+print("Lukujen keskiarvo on")
 print(ka)
