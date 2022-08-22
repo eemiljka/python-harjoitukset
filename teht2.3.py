@@ -9,4 +9,4 @@ A = kanta * korkeus
 piiri = (kanta * 2) + (korkeus * 2)
 
 print(f"Ala = {A}")
-print(f"piiri = {Piiri}")
+print(f"piiri = {piiri}")
