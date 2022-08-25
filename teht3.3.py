@@ -6,7 +6,5 @@
 sukupuoli = input("Oletko mies vai nainen: ")
 if sukupuoli in ["nainen"]:
     arvo1 = float(input("Kerro hemoglobiiniarvosi (g/l): "))
-    if arvo1<117:
-        print("Hemoglobiiniarvosi on alhainen.")
-        if arvo1>175:
-            print("Hemoglobiiniarvosi on korkea.")
+    if 117 <= arvo1 <= 175:
+        print("Hemoglobiiniarvosi on normaali.")
