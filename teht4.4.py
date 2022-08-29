@@ -11,7 +11,7 @@ while True:
     arvaus = input()
     luku = int(arvaus)
     if luku == x:
-        print("Voitit pelin.")
+        print("Oikein.")
         break
     elif luku < x:
         print("Kokeile suurempaa lukua: ")
