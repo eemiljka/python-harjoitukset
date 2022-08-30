@@ -2,9 +2,10 @@
 # senttimetreiksi niin kauan kunnes käyttäjä
 # antaa negatiivisen tuumamäärän. Sen jälkeen ohjelma
 # lopettaa toimintansa.
-tuuma = float(input("Anna tuumamäärä: "))
-senttimetri = tuuma * 2.54
-if tuuma >= 0:
-    print(f"{tuuma} tuumaa muunnettuna senttimetreiksi on {senttimetri} senttimetriä")
+tuuma2 = ""
+
+while tuuma2 != "lopeta":
+    tuuma2 = float(input("Anna tuumamäärä: "))
+    print(f"{tuuma2} tuumaa muunnettuna senttimetreiksi on {tuuma2 * 2.54} cm")
 else:
-    print("Toiminta lopetettu.")
+    print("Ohjelma lopetettu")
