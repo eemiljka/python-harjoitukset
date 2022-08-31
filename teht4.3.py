@@ -1,13 +1,28 @@
-# Kirjoita ohjelma, joka kysyy käyttäjältä
-# lukuja siihen saakka, kunnes tämä syöttää
-# tyhjän merkkijonon lopetusmerkiksi. Lopuksi
-# ohjelma tulostaa saaduista luvuista
-# pienimmän ja suurimman.
-luku = input("Anna luku: ")
-pienin_luku = min(luku)
-suurin_luku = max(luku)
-while luku != "":
-    luku = input("Anna luku: ")
-    if luku == "":
-        print(pienin_luku, suurin_luku)
-# ei ihan toimi oikealla tavalla.
+# ohjelma kysyy käyttäjältä lukuja, kunnes
+# käyttäjä syöttää tyhjän merkkijonon, jolloin
+# ohjelma tulostaa syöttämistä luvuista
+# pienimmän ja suurimman luvun
+
+import math
+
+annettu_luku = input("Anna luku: ")
+suurin_luku = -math.inf
+pienin_luku = math.inf
+
+while annettu_luku != "":
+
+    luku = int(annettu_luku)
+
+    if luku > suurin_luku:
+        suurin_luku = luku
+
+    if luku < pienin_luku:
+        pienin_luku = luku
+
+    annettu_luku = input("Anna luku: ")
+if suurin_luku == -math.inf or pienin_luku == math.inf:
+    print("Et syöttänyt arvoja!")
+
+else:
+    print(f"Pienin syöttämäsi luku: {pienin_luku}")
+    print(f"Suurin syöttämäsi luku: {suurin_luku}")

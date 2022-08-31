@@ -1,7 +1,6 @@
-# Kirjoita ohjelma, joka muuntaa tuumia
-# senttimetreiksi niin kauan kunnes käyttäjä
-# antaa negatiivisen tuumamäärän. Sen jälkeen ohjelma
-# lopettaa toimintansa.
+# ohjelma muuntaa annetut tuumat senttimetreiksi,
+# kunnes käyttäjä syöttää negatiivisen luvun
+# -> silloin ohjelma lopettaa toimintanta
 
 while True:
     kysymys = float(int(input("Anna tuumat: ")))
