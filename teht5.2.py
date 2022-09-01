@@ -5,10 +5,11 @@
 # lajittelujärjestyksen voi kääntää antamalla sort-metodille argumentiksi
 # reverse=True.
 
-luvut = []
+lukulista = []
+uusiluku = input("Syötä luku: ")
 
-luku = int(input("Anna ensimmäinen luku: "))
-while luku != "":
-    luvut.append(luku)
-    luku = int(input("Anna seuraava luku: "))
-print(luvut)
+while uusiluku != "":
+    lukulista.append(uusiluku)
+    uusiluku = input("Syötä luku: ")
+
+print(lukulista)
