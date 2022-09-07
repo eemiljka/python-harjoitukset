@@ -6,14 +6,13 @@
 # silmäluvun.
 
 import random
-
 def satunnainen():
-    print(random.randint(1, 6))
-    return
+    noppaLuku = random.randint(1, 6)
+    return noppaLuku
 
-heitto = input("Syötä 'h' heittääksesi noppaa. ")
-if heitto == "h":
-    satunnainen()
-    if satunnainen < 6:
-        heitto = (input("Syötä 'h' heittääksesi noppaa. ")
+while True:
+    silmäluku = satunnainen()
+    print(silmäluku)
+    if silmäluku == 6:
+        break
 
