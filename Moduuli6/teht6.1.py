@@ -15,4 +15,3 @@ while True:
     print(silmäluku)
     if silmäluku == 6:
         break
-
