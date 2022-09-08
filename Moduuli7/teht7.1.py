@@ -18,3 +18,6 @@ while True:
     if user == 12 or user == 1 or user == 2:
         print(vuodenajat[3])
         break
+
+    else:
+        print("Virheellinen arvo...")
