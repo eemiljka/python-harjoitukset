@@ -3,7 +3,7 @@ icaoNimi = {"EFHK":"Helsinki-Vantaa",
             "KJFK":"John F. Kennedy",
             "00NJ":"Colgate-Piscataway"}
 
-while user != 3:
+while user == "1" or user == "2":
 
     if user == "1":
         uusiKoodi = input("Syötä uusi ICAO-koodi: ").upper()
@@ -17,4 +17,4 @@ while user != 3:
 
     user = input("\nSyötä uusi lentoasema ('1')\nhae aiempaa lentoasemaa('2')\ntai lopeta ('3') ")
 
-# Ohjelma ei sulkeudu painamalla '3'...
+print("Ohjelma lopetetaan.")
