@@ -4,18 +4,12 @@
 # käytettävästä lentokenttätietokannasta.
 
 import mysql.connector
-
-def searchAirportsByICAO():
-    sql = "SELECT name, municipality FROM airport"
+def searchAirportsByICAO(ICAOGPS):
+    sql = "SELECT name, municipality FROM airport where gps_code = '\"" + ICAOGPS + "\"';"
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
     print(tulos)
-
-#PÄÄOHJELMA
-user = input("Syötä lentoaseman ICAO-koodi: ")
-searchAirportsByICAO(user)
-
 
 yhteys = mysql.connector.connect(
     host='127.0.0.1',
@@ -25,3 +19,9 @@ yhteys = mysql.connector.connect(
     password='wauwii321',
     autocommit=True
     )
+
+#PÄÄOHJELMA
+user = input("Syötä lentoaseman ICAO-koodi: ")
+searchAirportsByICAO(user)
+
+
