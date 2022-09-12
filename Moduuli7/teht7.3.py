@@ -1,9 +1,9 @@
-user = input("Syötä uusi lentoasema ('1')\nhae aiempaa lentoasemaa('2')\ntai lopeta ('3') ")
+user = input("Syötä uusi lentoasema ('1')\nhae aiempaa lentoasemaa('2')\ntai lopeta syöttämällä jotain muuta: ")
 icaoNimi = {"EFHK":"Helsinki-Vantaa",
             "KJFK":"John F. Kennedy",
             "00NJ":"Colgate-Piscataway"}
 
-while user == "1" or user == "2":
+while user == "1" or user == "2" and user != "3":
 
     if user == "1":
         uusiKoodi = input("Syötä uusi ICAO-koodi: ").upper()
