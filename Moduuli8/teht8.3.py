@@ -7,6 +7,7 @@
 # Kirjoita hakukenttään geopy ja vie asennus loppuun.
 
 import mysql.connector
+from geopy import distance
 
 yhteys = mysql.connector.connect(
     host='127.0.0.1',
@@ -17,20 +18,16 @@ yhteys = mysql.connector.connect(
     autocommit=True
     )
 
-def ICAOT():
-    sql = "SELECT latitude_deg, longtitude_deg FROM airport WHERE "
+def ICAOT(ICAOGPS):
+    sql = "SELECT latitude_deg, longtitude_deg FROM airport WHERE gps_code = '\"" + ICAOGPS + "\"';"
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
-    for i in tulos:
-        print(i)
-
-koodit = []
+    return tulos
 
 user = input("Syötä 1. ICAO-koodi: ")
-koodit.append(user)
+lentoasema1 = ICAOT(user)
 
 user2 = input("Syötä 2. ICAO-koodi: ")
-koodit.append(user2)
-
-ICAOT(user, user2)
+lentoasema2 = ICAOT(user2)
+print(f"{distance.distance(lentoasema1, lentoasema2).km:.2f}")
