@@ -5,7 +5,7 @@
 
 import mysql.connector
 def searchAirportsByICAO(ICAOGPS):
-    sql = "SELECT name, municipality FROM airport where gps_code = '\"" + ICAOGPS + "\"';"
+    sql = "SELECT name, municipality FROM airport where gps_code = '" + ICAOGPS + "';"
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()

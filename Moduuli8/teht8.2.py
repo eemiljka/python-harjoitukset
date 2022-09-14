@@ -17,7 +17,7 @@ yhteys = mysql.connector.connect(
     )
 
 def searchByMaatunnus(maakoodi):
-    sql = "SELECT type, count(type) from airport where iso_country = '\"" + maakoodi + "\"'group by type order by count(type) asc;"
+    sql = "SELECT type, count(type) from airport where iso_country = '" + maakoodi + "'group by type order by count(type) asc;"
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
