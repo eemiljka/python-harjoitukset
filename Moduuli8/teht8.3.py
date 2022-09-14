@@ -19,7 +19,7 @@ yhteys = mysql.connector.connect(
     )
 
 def ICAOT(ICAOGPS):
-    sql = "SELECT latitude_deg, longtitude_deg FROM airport WHERE gps_code = '" + ICAOGPS + "';"
+    sql = "SELECT latitude_deg, longitude_deg FROM airport WHERE gps_code = '" + ICAOGPS + "';"
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
