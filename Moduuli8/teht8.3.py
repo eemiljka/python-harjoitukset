@@ -31,3 +31,5 @@ lentoasema1 = ICAOT(user)
 user2 = input("Syötä 2. ICAO-koodi: ")
 lentoasema2 = ICAOT(user2)
 print(f"{distance.distance(lentoasema1, lentoasema2).km:.2f}")
+
+#TESTICOMMIT
