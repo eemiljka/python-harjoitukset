@@ -34,4 +34,3 @@ auto.kiihdytä(50)
 print(f"Auton nopeus on: {auto.tamanhetkinen_nopeus}")
 auto.jarruta(-200)
 print(f"Auton nopeus hätäjarrutuksen jälkeen: {auto.tamanhetkinen_nopeus}")
-
