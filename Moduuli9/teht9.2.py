@@ -9,33 +9,29 @@
 # uusi nopeus. Kuljettua matkaa ei tarvitse vielä päivittää.
 
 class Auto:
-    def __init__(self, rekisteritunnus, huippunopeus, tamanhetkinen_nopeus, kuljettu_matka, nopeuden_muutos):
+    def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
-        self.tamanhetkinen_nopeus = tamanhetkinen_nopeus
-        self.kuljettu_matka = kuljettu_matka
-        self.nopeuden_muutos = nopeuden_muutos
+        self.tamanhetkinen_nopeus = 0
+        self.kuljettu_matka = 0
 
     def kiihdytä(self, nopeuden_muutos):
-        self.nopeuden_muutos = 0
-        self.nopeuden_muutos += 30
-        self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + self.nopeuden_muutos
-        if self.tamanhetkinen_nopeus < self.huippunopeus:
-            self.nopeuden_muutos += 70
-            self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + self.nopeuden_muutos
-        else:
-            print(self.tamanhetkinen_nopeus)
-            if self.tamanhetkinen_nopeus < self.huippunopeus:
-                self.nopeuden_muutos += 50
-                self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + self.nopeuden_muutos
-            else:
-                print(self.tamanhetkinen_nopeus)
-                if self.tamanhetkinen_nopeus <
+        while self.tamanhetkinen_nopeus >= 0 and self.tamanhetkinen_nopeus <= self.huippunopeus:
+            self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
+            if self.tamanhetkinen_nopeus >= self.huippunopeus:
+                self.tamanhetkinen_nopeus = 148
+                break
 
+    def jarruta(self, nopeuden_muutos):
+        if self.tamanhetkinen_nopeus >= 0:
+            self.tamanhetkinen_nopeus = 0
 
-auto = Auto("ABC-123", 142, 0, 0)
+auto = Auto("ABC-123", 142)
 
-def autontulostus():
-    print(f"{auto.rekisteritunnus}, {auto.huippunopeus}, {auto.tamanhetkinen_nopeus}, {auto.kuljettu_matka}")
+auto.kiihdytä(30)
+auto.kiihdytä(70)
+auto.kiihdytä(50)
+print(f"Auton nopeus on: {auto.tamanhetkinen_nopeus}")
+auto.jarruta(-200)
+print(f"Auton nopeus hätäjarrutuksen jälkeen: {auto.tamanhetkinen_nopeus}")
 
-autontulostus()
