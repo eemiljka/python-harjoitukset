@@ -22,6 +22,7 @@ class Auto:
         elif nopeuden_muutos < 0:
             self.tamanhetkinen_nopeus = 0
 
+
 auto = Auto("ABC-123", 142)
 
 auto.kiihdytä(30)

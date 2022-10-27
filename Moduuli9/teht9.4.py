@@ -12,6 +12,7 @@
 # Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.
 import random
 
+
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
@@ -34,11 +35,20 @@ class Auto:
 
     def kulje(self, tuntimaara):
         self.kuljettu_matka = self.tamanhetkinen_nopeus * tuntimaara + self.kuljettu_matka
-        print(f"Kuljettu matka: {self.kuljettu_matka}")
+
 
 cars = []
 for i in range(10):
-    cars.append(Auto("ABC" + str(i), random.randint(100, 200)))
+    cars.append(Auto("ABC-" + str(i + 1), random.randint(100, 200)))
+
+stop = False
+while not stop:
+    for car in cars:
+        car.kiihdytä(random.randint(-10, 15))
+        car.kulje(1)
+        if car.kuljettu_matka >= 10000:
+            stop = True
+            break
 
 for car in cars:
     print(car.print_info())

@@ -13,9 +13,12 @@ class Auto:
         self.tamanhetkinen_nopeus = 0
         self.kuljettu_matka = 0
 
+
 auto = Auto("ABC-123", 142)
+
 
 def autontulostus():
     print(f"{auto.rekisteritunnus}, {auto.huippunopeus}, {auto.tamanhetkinen_nopeus}, {auto.kuljettu_matka}")
+
 
 autontulostus()

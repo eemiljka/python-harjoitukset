@@ -24,6 +24,7 @@ class Auto:
         self.kuljettu_matka = self.tamanhetkinen_nopeus * tuntimaara + self.kuljettu_matka
         print(f"Kuljettu matka: {self.kuljettu_matka}")
 
+
 auto = Auto("ABC-123", 142)
 
 auto.kiihdytä(20)
