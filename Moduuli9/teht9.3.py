@@ -24,14 +24,14 @@ class Auto:
 
     def kulje(self, tuntimaara):
         self.kuljettu_matka = self.tamanhetkinen_nopeus * tuntimaara + self.kuljettu_matka
-        print(self.kuljettu_matka)
+        print(f"Kuljettu matka: {self.kuljettu_matka}")
 
 auto = Auto("ABC-123", 142)
 
+auto.kiihdytä(20)
+print(f"Tämän hetkinen nopeus: {auto.tamanhetkinen_nopeus}")
+auto.kulje(2)
 
 auto.kiihdytä(20)
-print(auto.tamanhetkinen_nopeus)
-auto.kulje(2)
-auto.kiihdytä(20)
-print(auto.tamanhetkinen_nopeus)
+print(f"Tämän hetkinen nopeus: {auto.tamanhetkinen_nopeus}")
 auto.kulje(2)
