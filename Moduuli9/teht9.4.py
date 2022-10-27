@@ -30,9 +30,8 @@ class Auto:
         self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
         if self.tamanhetkinen_nopeus >= self.huippunopeus:
             self.tamanhetkinen_nopeus = self.huippunopeus
-        elif nopeuden_muutos < 0:
-            self.tamanhetkinen_nopeus = 0
-
+        elif nopeuden_muutos < 0 and nopeuden_muutos > -10:
+            self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
     def kulje(self, tuntimaara):
         self.kuljettu_matka = self.tamanhetkinen_nopeus * tuntimaara + self.kuljettu_matka
 
