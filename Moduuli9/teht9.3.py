@@ -14,12 +14,10 @@ class Auto:
         self.kuljettu_matka = 0
 
     def kiihdytä(self, nopeuden_muutos):
-            self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
-            if self.tamanhetkinen_nopeus >= self.huippunopeus:
-                self.tamanhetkinen_nopeus = self.huippunopeus
-
-    def jarruta(self, nopeuden_muutos):
-        if self.tamanhetkinen_nopeus >= 0:
+        self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
+        if self.tamanhetkinen_nopeus >= self.huippunopeus:
+            self.tamanhetkinen_nopeus = self.huippunopeus
+        elif nopeuden_muutos < 0:
             self.tamanhetkinen_nopeus = 0
 
     def kulje(self, tuntimaara):

@@ -16,17 +16,11 @@ class Auto:
         self.kuljettu_matka = 0
 
     def kiihdytä(self, nopeuden_muutos):
-            self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
-            if self.tamanhetkinen_nopeus >= self.huippunopeus:
-                self.tamanhetkinen_nopeus = self.huippunopeus
-
-    def jarruta(self, nopeuden_muutos):
-        if self.tamanhetkinen_nopeus >= 0:
+        self.tamanhetkinen_nopeus = self.tamanhetkinen_nopeus + nopeuden_muutos
+        if self.tamanhetkinen_nopeus >= self.huippunopeus:
+            self.tamanhetkinen_nopeus = self.huippunopeus
+        elif nopeuden_muutos < 0:
             self.tamanhetkinen_nopeus = 0
-
-    def kulje(self, tuntimaara):
-        self.kuljettu_matka = self.tamanhetkinen_nopeus * tuntimaara + self.kuljettu_matka
-        print(self.kuljettu_matka)
 
 auto = Auto("ABC-123", 142)
 
@@ -34,5 +28,5 @@ auto.kiihdytä(30)
 auto.kiihdytä(70)
 auto.kiihdytä(50)
 print(f"Auton nopeus on: {auto.tamanhetkinen_nopeus}")
-auto.jarruta(-200)
+auto.kiihdytä(-200)
 print(f"Auton nopeus hätäjarrutuksen jälkeen: {auto.tamanhetkinen_nopeus}")
