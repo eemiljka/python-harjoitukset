@@ -50,4 +50,4 @@ while not stop:
             break
 
 for car in cars:
-    print(car.print_info())
+    (car.print_info())
