@@ -21,6 +21,17 @@ class Talo:
         print(f"Ajetaan hissiä {hissiNumero}\n")
         elevator.go_to_floor(kohdekerros)
 
+# Ei toimi
+    def palohälytys(self):
+        Hissi.go_to_floor(1)
+
+"""Jatka edellisen tehtävän ohjelmaa siten, että Talo-luokassa
+ on parametriton metodi palohälytys, joka käskee kaikki hissit
+  pohjakerrokseen. Jatka pääohjelmaa siten, että talossasi tulee palohälytys."""
+
+
+
+
 class Hissi:
     def __init__(self, alin, ylin, numero):
         self.nbr = numero
@@ -78,4 +89,7 @@ if __name__ == '__main__':
     floor_to_go = 15
 
     house.aja_hissia(elevator_to_drive, floor_to_go)
+    house.print_data()
+
+    house.palohälytys()
     house.print_data()
