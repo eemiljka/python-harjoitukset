@@ -13,14 +13,23 @@ app = Flask(__name__)
 @app.route('/alkuluku/<number>')
 def alkuluku(number):
     try:
-        number = float(number)
-        if number > 1 and number % 1 == 0 and number % number == 0:
+        number = int(number)
+        if number > 1:
+            for i in range(2, number):
+                if number % i == 0:
+                    isPrime = False
+                    break
+            else:
+                isPrime = True
+
+        else:
             isPrime = True
-            tilakoodi = 200
-            vastaus = {
-                "Number": number,
-                "isPrime": isPrime
-            }
+
+        vastaus = {
+            "Number": number,
+            "isPrime": isPrime
+        }
+        return vastaus
 
     except ValueError:
         tilakoodi = 400
@@ -31,15 +40,6 @@ def alkuluku(number):
 
     jsonvast = json.dumps(vastaus)
     return Response(response=jsonvast, status=tilakoodi, mimetype="application/json")
-
-@app.errorhandler(404)
-def page_not_found(virhekoodi):
-    vastaus = {
-        "status" : "404",
-        "teksti" : "Virheellinen päätepiste"
-    }
-    jsonvast = json.dumps(vastaus)
-    return Response(response=jsonvast, status=404, mimetype="application/json")
 
 
 if __name__ == '__main__':
