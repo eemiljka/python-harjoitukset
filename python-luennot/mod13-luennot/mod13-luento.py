@@ -39,7 +39,7 @@ from flask import Flask, Response
 import json
 
 app = Flask(__name__)
-@app.route('/summa/<luku1>/<luku2>')
+@app.route('/kenttä/<luku1>/<luku2>')
 def summa(luku1, luku2):
     try:
         luku1 = float(luku1)
