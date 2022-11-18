@@ -12,6 +12,7 @@ app = Flask(__name__)
 
 @app.route('/alkuluku/<number>')
 def alkuluku(number):
+    isPrime = True
     try:
         number = int(number)
         if number > 1:
@@ -19,8 +20,8 @@ def alkuluku(number):
                 if number % i == 0:
                     isPrime = False
                     break
-            else:
-                isPrime = True
+                else:
+                    isPrime = True
 
         else:
             isPrime = True
